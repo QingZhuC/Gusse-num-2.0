@@ -5,37 +5,37 @@
 #include <math.h>
 
 
-void menu()//¿ªÊ¼²Ëµ¥
+void menu()//å¼€å§‹èœå•
 {
 	printf("###################################\n");
-	printf("####      ÊÇ·ñ¿ªÊ¼²ÂÊı×Ö£¿     ####\n");
-	printf("####          1.¿ªÊ¼           ####\n");
-	printf("####          0.½áÊø           ####\n");
+	printf("####      æ˜¯å¦å¼€å§‹çŒœæ•°å­—ï¼Ÿ     ####\n");
+	printf("####          1.å¼€å§‹           ####\n");
+	printf("####          0.ç»“æŸ           ####\n");
 	printf("###################################\n");
 }
 
-void rule()//¹æÔò
+void rule()//è§„åˆ™
 {
-	printf("¹æÔòÈçÏÂ£º\n");
-	printf("Ê×ÏÈĞèÒª¸ù¾İÌáÊ¾ÊÖ¶¯ÉèÖÃÒ»¸öÓÒ±ß½ç\n");
-	printf("È»ºóÓÉÄãÀ´Ëæ±ãÏëÒ»¸ö1~n·¶Î§ÄÚµÄÊı£¨°üÀ¨±ß½çÖµ£©\n");
-	printf("×îºó¼ÆËã»úÀ´²Â\n");
-	printf("£¨²»ÒªÊäĞ¡Êı£¬ÊäÈë·¶Î§ÊÇ1~21ÒÚ£©\n");
+	printf("è§„åˆ™å¦‚ä¸‹ï¼š\n");
+	printf("é¦–å…ˆéœ€è¦æ ¹æ®æç¤ºæ‰‹åŠ¨è®¾ç½®ä¸€ä¸ªå³è¾¹ç•Œ\n");
+	printf("ç„¶åç”±ä½ æ¥éšä¾¿æƒ³ä¸€ä¸ª1~nèŒƒå›´å†…çš„æ•°ï¼ˆåŒ…æ‹¬è¾¹ç•Œå€¼ï¼‰\n");
+	printf("æœ€åè®¡ç®—æœºæ¥çŒœ\n");
+	printf("ï¼ˆä¸è¦è¾“å°æ•°ï¼Œè¾“å…¥èŒƒå›´æ˜¯1~21äº¿ï¼‰\n");
 }
-int times(int x)//×î¶àĞèÒª´ÎÊı
+int times(int x)//æœ€å¤šéœ€è¦æ¬¡æ•°
 {
 	int n = 0;
 	while (pow(2, n) <= x)
 		n++;
 	return n;
 }
-int game(int left,long long right)//Ö÷Ìå
+int game(int left,long long right)//ä¸»ä½“
 {
-	int chh = 0;//ÊäÈë
-	long long mid = (left + right) / 2;//ÖĞ¼äÖµ
-	if (left <= right)//¶ş·Ö·¨
+	int chh = 0;//è¾“å…¥
+	long long mid = (left + right) / 2;//ä¸­é—´å€¼
+	if (left <= right)//äºŒåˆ†æ³•
 	{
-		printf("ÊÇ·ñÊÇ%d?\n1.²Â´óÁË\t2.²ÂĞ¡ÁË\t3.²Â¶ÔÀ²\nÇëÊäÈë:", mid);
+		printf("æ˜¯å¦æ˜¯%d?\n1.çŒœå¤§äº†\t2.çŒœå°äº†\t3.çŒœå¯¹å•¦\nè¯·è¾“å…¥:", mid);
 		scanf("%d", &chh);
 		switch (chh)
 		{
@@ -46,47 +46,47 @@ int game(int left,long long right)//Ö÷Ìå
 		case 3:
 			return 1;
 		default:
-			printf("²»ÒªÂÒ¸ãÀ²£¬/remake°É\n");
+			printf("ä¸è¦ä¹±æå•¦ï¼Œ/remakeå§\n");
 			return 0;
 		}
 		
 	}
 	else
 	{
-		printf("\nÄÅ£¬¸Õ¸Õ£¬ÄãËµ»ÑÁË°Õ£¨ÄÕ£©\n");
+		printf("\nå‘ï¼Œåˆšåˆšï¼Œä½ è¯´è°äº†ç½¢ï¼ˆæ¼ï¼‰\n");
 		return 0;
 	}
 
 }
 
 int main()
-{
-	
-	int ch = 0;//ÊäÈë
+{	
+	int ch = 0;//è¾“å…¥
 	do
 	{
-		int left = 1;//³õÊ¼»¯×ó±ß½ç
-		int right = 1;//³õÊ¼»¯ÓÒ±ß½ç
-		menu();//¿ªÊ¼²Ëµ¥
-		printf("ÇëÊäÈë£º");
+		int left = 1;//åˆå§‹åŒ–å·¦è¾¹ç•Œ
+		int right = 1;//åˆå§‹åŒ–å³è¾¹ç•Œ
+		menu();//å¼€å§‹èœå•
+		printf("è¯·è¾“å…¥ï¼š");
 		scanf("%d", &ch);
-		switch (ch)//¼à²âÊäÈë
+		switch (ch)//ç›‘æµ‹è¾“å…¥
 		{
-		case 1://ÓÎÏ·¿ªÊ¼
-			system("cls");//ÇåÆÁ
-			rule();//¹æÔò
-			printf("ÇëÊäÈëÓÒ±ß½ç£º");
+		case 1://æ¸¸æˆå¼€å§‹
+			system("cls");//æ¸…å±
+			rule();//è§„åˆ™
+			printf("è¯·è¾“å…¥å³è¾¹ç•Œï¼š");
 			scanf("%d", &right);
 			
-			printf("\n×î¶àĞèÒª%d´Î²Â³öÕâ¸öÊı\n\n", times(right));
-			printf("ÓÃÁË%d´Î\n", game(left, right));
+			printf("\næœ€å¤šéœ€è¦%dæ¬¡çŒœå‡ºè¿™ä¸ªæ•°\n\n", times(right));
+			printf("ç”¨äº†%dæ¬¡\n", game(left, right));
 			break;
-		case 0://ÍË³ö³ÌĞò
+		case 0://é€€å‡ºç¨‹åº
 			break;
-		default://ÌáÊ¾ÊäÈë´íÎó
-			printf("ÊäÈëÓĞÎó£¡\n");
+		default://æç¤ºè¾“å…¥é”™è¯¯
+			printf("è¾“å…¥æœ‰è¯¯ï¼\n");
 			break;
 		}
 	} while (ch);
+	return 0;
 }
 
